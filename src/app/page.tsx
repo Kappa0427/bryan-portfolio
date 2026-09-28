@@ -1,69 +1,151 @@
-import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main>
+      <nav className="navbar">
+        <Link href="/" className="nav-logo">
+          BR
+        </Link>
+
+        <div className="nav-links">
+          <Link href="/#work">Work</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+
+          <a
+            href="/Bryan-Rivas-Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Resume
+          </a>
+        </div>
+      </nav>
+
+      <section className="hero">
+        <p className="eyebrow">
+          UX DESIGNER · CONVERSATIONAL AI · FRONT-END
+        </p>
+
+        <h1>
+          I design digital experiences that put people first.
+        </h1>
+
+        <p className="hero-description">
+          Hi, I&apos;m Bryan — a UX Design graduate creating thoughtful
+          digital experiences through user research, conversational AI,
+          prototyping, usability testing, and technology.
+        </p>
+
+        <div className="hero-buttons">
+          <a className="button-primary" href="#work">
+            View my work
+          </a>
+
+          <Link className="button-secondary" href="/about">
+            About me
+          </Link>
+        </div>
+      </section>
+
+      <section className="work" id="work">
+        <p className="section-label">SELECTED WORK</p>
+        <h2>Projects</h2>
+
+        <article className="project-card project-featured">
+          <p className="project-label">
+            FEATURED CASE STUDY · 2026
           </p>
+
+          <h3>Thiago</h3>
+
+          <p className="project-description">
+            An AI-powered experience designed to help St. Edward&apos;s
+            University students discover campus organizations based on
+            their interests, goals, and preferences.
+          </p>
+
+          <p className="project-tags">
+            UX Research · Conversational AI · AI Logic · Usability Testing
+          </p>
+
+          <Link className="project-link" href="/work/thiago">
+            View case study →
+          </Link>
+        </article>
+
+        <div className="project-grid">
+          <article className="small-project-card">
+            <p className="project-label">UX / UI DESIGN</p>
+
+            <h3>Mental Health Chatbot</h3>
+
+            <p>
+              A Figma prototype exploring conversational support for
+              students navigating anxiety, ADHD, stress, motivation,
+              and campus resources.
+            </p>
+
+            <div className="small-project-footer">
+              <span>Figma</span>
+              <span>Conversational UX</span>
+            </div>
+
+            <Link
+              href="/work/mental-health-chatbot"
+              className="project-link"
+            >
+              View project →
+            </Link>
+          </article>
+
+          <article className="small-project-card">
+            <p className="project-label">PRODUCT DESIGN</p>
+
+            <h3>Mood Tracker</h3>
+
+            <p>
+              A mobile experience designed around simple mood tracking,
+              intuitive navigation, and understandable data visualization.
+            </p>
+
+            <div className="small-project-footer">
+              <span>UX Research</span>
+              <span>Figma</span>
+            </div>
+          </article>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="home-about">
+        <p className="section-label">ABOUT</p>
+
+        <div>
+          <h2>
+            Design thinking backed by technical curiosity.
+          </h2>
+
+          <p>
+            My path started in computer science before I moved into UX
+            design. That combination influences how I approach products:
+            understanding people first while also thinking about how the
+            experience can actually be built.
+          </p>
+
+          <Link href="/about" className="text-link">
+            More about me →
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <footer className="footer">
+        <p>© 2026 Bryan Rivas</p>
+
+        <Link href="/contact">
+          Let&apos;s work together →
+        </Link>
+      </footer>
+    </main>
   );
 }
